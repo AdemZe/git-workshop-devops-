@@ -25,7 +25,9 @@ jobs:
             - name : docker vesion 
               run : docker -v 
             - name : npm version 
-              run : npm -v   
+              run : npm -v 
+            - name : Nginx version 
+              run: nginx -v 
 
 
     job3 : 
