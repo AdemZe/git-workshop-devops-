@@ -3,7 +3,7 @@ name : deploy to staging
 on:
     push:
         branches:
-            - main
+            [ main, master ]
 jobs:
     job1 :
         runs-on: ubuntu-latest
@@ -54,4 +54,34 @@ jobs:
         steps:
             - name: liste folder and files 
               run: ls -la 
-            
+           
+    job6:
+         runs-on: ubuntu-latest
+         steps:
+            - name: print hello world  
+              run: echo "Hello World"
+
+            - name: afficher la date 
+              run: date
+
+
+            - name: afficher le nom de l'utilisateur
+              run: whoam 
+
+
+
+    job7: 
+           runs-on: ubuntu-latest
+           steps:
+            - name: print repository
+              run: |
+                echo " Repository: ${{ github.repository }}"
+                echo "branche : ${{github.ref_name}}"
+                echo "commit message : ${{github.event.head_commit.message}}"
+                echo "commit author : ${{github.event.head_commit.author.name}}"
+                echo "commit date : ${{github.event.head_commit.timestamp}}"
+                echo "commit hash : ${{github.event.head_commit.id}}"
+
+          
+
+     
